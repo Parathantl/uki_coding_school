@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br>
+<br>
+
+<div class="dropdown">
+  <button style="background-color:red;color:white;font-style:Bold" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Button Dropdown Menu
+    <span class="caret"></span>
+  </button>
+  <ul style="background-color:pink;color:white" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Bootstrap</a></li>
+    <li><a href="#">jQuery</a></li>
+<li><a href="#">jQuery UI</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">PHP</a></li>
+  </ul>
+</div>
+
+<div class="container">
+  <br><br>
+  <table class="table table-bordered">
+
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Quality</th>
+        <th>Product Quantity</th>
+      </tr>
+
+      <tr class="info">
+        <td>3</td>
+        <td>Sugar</td>
+        <td>Good</td>
+        <td>200 bags </td>
+      </tr>
+      <tr class="danger">
+        <td>2</td>
+        <td><rb>Rice</rb></td>
+        <td>Good</td>
+        <td>250 bags</td>
+      </tr>
+      <tr class="warning">
+        <td>3</td>
+        <td>Sugar</td>
+        <td>Good</td>
+        <td>200 bags </td>
+      </tr>
+      <tr class="active">
+        <td>3</td>
+        <td>Sugar</td>
+        <td>Good</td>
+        <td>200 bags </td>
+      </tr><tr class="success">
+        <td>3</td>
+        <td>Sugar</td>
+        <td>Good</td>
+        <td>200 bags </td>
+      </tr>
+
+  </table>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-home
+"> HOME</span></a></li>
+
+      <li class="dropdown">
+             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-align-justify"> MENUS </span>
+              <span class="glyphicon glyphicon-plus" style="align:right"></span></a>
+       		 <ul class="dropdown-menu">
+          <li><a href="#">Menu 2</a></li>
+
+			     <li class="dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Menu 1 </span>
+         <span class="glyphicon glyphicon-plus"  style="align:right"></span></a>
+          <ul class="dropdown-menu">
+		  <li><a href="#">Menu 1.1</a></li>
+			  <li><a href="#">Menu 1.2</a></li>
+			</ul>
+			</li>
+        </ul>
+      </li>
+
+      <li><a href="#"><span class="glyphicon glyphicon-cog"> SETTINGS</span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-earphone"> CONTACT</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br><br><br><br>
+
+<div class="container">
+<ul STYLE="background-color:black" class="nav nav-pills">
+<li><a href="#">HOME</a></li>
+
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      SERVICES</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Web Design</a></li>
+<li><a href="#">Web Development</a></li>
+<li><a href="#">Web Hosting</a></li>
+    </ul>
+  </li>
+
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">BLOG</a></li>
+<li><a href="#">CONTACT</a></li>
+
+</ul>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+   <div style="width:40%">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+                <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                  <option value="Acessories">Acessories</option>
+                  <option value="Jackets">Jackets</option>
+                  <option value="Jeans">Jeans</option>
+   <option value="Shoes">Shoes</option>
+   <option value="Shirts">Shirts</option>
+   <option value="Watches">Watches</option>
+                </select>
+        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+   <br><br><br>
+
+</body>
+</html>

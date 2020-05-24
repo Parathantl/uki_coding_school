@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Marks
+  </title>
+</head>
+<body>
+
+<p id="mark"></p>
+
+<script>
+
+var marks = window.prompt("Enter Marks: ");
+var grade;
+if (marks>=75){
+grade= "A";
+}
+else if (marks>=65){
+grade= "B";
+}
+else if (marks>=55){
+grade= "C";
+}
+else if(marks>=45){
+grade="D";
+}
+else{
+grade="Fail";
+}
+
+document.getElementById("mark").innerHTML= grade;
+
+</script>
+
+</body>
+</html>

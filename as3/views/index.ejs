@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+<link rel="icon" href="http://iconshow.me/media/images/Mixed/small-n-flat-icon/png/512/movie-alt.png">
+
+<% include ../views/script %>
+<style>
+
+
+  footer {
+     position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: black;
+     color: white;
+     text-align: center;
+  }
+  .bottomLine {
+    padding-top: 2px;
+    border-bottom: 2px solid hotpink;
+    width:40%;
+  }
+
+.hidediv {display: none;}
+.show {
+  display: block;
+}
+
+a:visited {
+    color: black;
+}
+
+a:visited.b {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: blue;
+}
+
+</style>
+
+
+
+</head>
+
+<body style="background-color:grey">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <div class="navbar-brand" style="background-color:Yellow"><i class="fa fa-film"></i> <span>ShowTrackr</span></div>
+    </div>
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="/"><i class="fa fa-home"></i>
+    Home</a></li>
+          <li><a href="/add"><i class="fa fa-plus"></i>
+    Add</a></li>
+
+      </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+
+<% if(user){ %>
+
+<!--Welcome...!!--><li><a href="/profile">
+<% if (user.twitter.username != null) { %>
+<%= user.twitter.username %>
+<% } else if (user.google.email != null) { %>
+<%= user.google.email %>
+<% } else if (user.facebook.name  != null)  { %>
+<%= user.facebook.name  %>
+<% } else { %>
+<%= user.local.email %>
+<% } %>
+</a>
+</li>
+
+ <li><a href="/logout"><i class="fa fa-sign-out"> Logout</a></i>
+
+
+ <% } else{ %>
+    <li><a href="/login"><i class="fa fa-sign-in"></i>
+    Login</a></li>
+        <li><a href="/signup"><i class="fa fa-user-plus"></i>
+    Sign Up</a></li>
+<% } %>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <div style="padding:10px 60px 10px 60px;background-color:white">
+<div>   <!--*/ 0-9 and A to Z /*-->
+  <center>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('num')"style="margin-top:5px" href = "#" role = "button">0-9</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-B')" style="margin-top:5px" href = "#" role = "button">A</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-B')" style="margin-top:5px" href = "#" role = "button">B</a>
+    <a class = "btn btn-info btn-sm"onclick="filterSelection('alpha-C')" style="margin-top:5px" href = "#" role = "button">C</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-D')" style="margin-top:5px" href = "#" role = "button">D</a>
+    <a class = "btn btn-info btn-sm"onclick="filterSelection('alpha-E')" style="margin-top:5px" href = "#" role = "button">E</a>
+    <a class = "btn btn-info btn-sm"onclick="filterSelection('alpha-F')" style="margin-top:5px" href = "#" role = "button">F</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-G')" style="margin-top:5px" href = "#" role = "button">G</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-H')" style="margin-top:5px" href = "#" role = "button">H</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-I')" style="margin-top:5px" href = "#" role = "button">I</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-J')" style="margin-top:5px" href = "#" role = "button">J</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-K')" style="margin-top:5px" href = "#" role = "button">K</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-L')" style="margin-top:5px" href = "#" role = "button">L</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-M')" style="margin-top:5px" href = "#" role = "button">M</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-N')" style="margin-top:5px" href = "#" role = "button">N</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-O')" style="margin-top:5px" href = "#" role = "button">O</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-P')" style="margin-top:5px" href = "#" role = "button">P</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-Q')" style="margin-top:5px" href = "#" role = "button">Q</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-R')" style="margin-top:5px" href = "#" role = "button">R</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-S')" style="margin-top:5px" href = "#" role = "button">S</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-T')" style="margin-top:5px" href = "#" role = "button">T</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-U')" style="margin-top:5px" href = "#" role = "button">U</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-V')" style="margin-top:5px" href = "#" role = "button">V</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-W')" style="margin-top:5px" href = "#" role = "button">W</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-X')" style="margin-top:5px" href = "#" role = "button">X</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-Y')" style="margin-top:5px" href = "#" role = "button">Y</a>
+    <a class = "btn btn-info btn-sm" onclick="filterSelection('alpha-Z')" style="margin-top:5px" href = "#" role = "button">Z</a>
+</center>
+</div>
+<br>
+<div style="padding:0 60px">
+  <a class = "btn btn-default btn-xs"  onclick="filterSelection('Action')" style="margin-top:5px" href = "#" role = "button">Action</a>
+  <a class = "btn btn-default btn-xs"  onclick="filterSelection('Adventure')" style="margin-top:5px" href = "#" role = "button">Adventure</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Animation')" style="margin-top:5px" href = "#" role = "button">Animation</a>
+  <a class = "btn btn-default btn-xs"  onclick="filterSelection('Children')" style="margin-top:5px" href = "#" role = "button">Children</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Comedy')" style="margin-top:5px" href = "#" role = "button">Comedy</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Crime')" style="margin-top:5px" href = "#" role = "button">Crime</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Documentary')" style="margin-top:5px" href = "#" role = "button">Documentary</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Drama')" style="margin-top:5px" href = "#" role = "button">Drama</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Family')" style="margin-top:5px" href = "#" role = "button">Family</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Fantasy')" style="margin-top:5px" href = "#" role = "button">Fantasy</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Food')" style="margin-top:5px" href = "#" role = "button">Food</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Home')" style="margin-top:5px" href = "#" role = "button">Home & Garden</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Horror')" style="margin-top:5px" href = "#" role = "button">Horror</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Mini')" style="margin-top:5px"  href = "#" role = "button">Mini-Series</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Mystery')" style="margin-top:5px" href = "#" role = "button">Mystery</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('News')" style="margin-top:5px" href = "#" role = "button">News</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Reality')" style="margin-top:5px" href = "#" role = "button">Reality</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Romance')" style="margin-top:5px" href = "#" role = "button">Romance</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Sci-Fi')" style="margin-top:5px" href = "#" role = "button">Sci-Fi</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Sports')" style="margin-top:5px" href = "#" role = "button">Sports</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Suspense')" style="margin-top:5px" href = "#" role = "button">Suspense</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Talk')" style="margin-top:5px" href = "#" role = "button">Talk Show</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Thriller')" style="margin-top:5px" href = "#" role = "button">Thriller</a>
+  <a class = "btn btn-default btn-xs" onclick="filterSelection('Travel')" style="margin-top:5px" href = "#" role = "button">Travel</a>
+</div>
+</div>
+
+<div class="container" style="padding:10px 50px 10px 50px">
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading" style="height:50px">
+<div style="width:50%;float:left">
+      <h4><b>TOP 12 SHOWS<b></h4>
+      </div>
+
+          <div style="width:50%;float:right;padding-left:150px">
+            <form>
+               <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search" name="q">
+                   <div class="input-group-btn">
+                       <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+                   </div>
+               </div>
+               </form>
+          </div>
+      </div>
+
+      <div class="panel-body" style="margin-top:10px">
+
+<!--*/ Start Shows List */-->
+<div class="row">        <!--*/First Row */-->
+
+<div class="col-sm-4 hidediv alpha-G Action">
+<a href="Shows\s1.html">
+<img class="img-responsive img-rounded" height="auto" src="images/2.jpg">
+<b>Game Of Thrones</b><br>
+<p>Season 7, Episodes 84</p></a>
+</div>
+
+<div class="col-sm-4 hidediv alpha-B Comedy">
+  <a href="Shows\s2.html">
+<img class="img-responsive img-rounded" src="images/3.jpg">
+<b>Big Bang Theory</b><br>
+<p>Season 11, Episodes 239</p></a>
+</div>
+
+<div class="col-sm-4 hidediv alpha-T Thriller">
+  <a href="Shows\s3.html">
+<img class="img-responsive img-rounded" src="images/4.jpg">
+<b>The Good Doctor</b><br>
+<p>Season 1, Episodes 9</p></a>
+</div>
+
+</div>
+
+<div class="row">  <!--*/Second Row */-->
+
+<div class="col-sm-4 alb hidediv alpha-J Comedy">
+  <a href="Shows\s4.html">
+<img class="img-responsive img-rounded" src="images/5.jpg">
+<b>Jane the Virgin</b><br>
+<p>Season 4, Episodes 81</p></A>
+</div>
+
+<div class="col-sm-4 hidediv num Thriller">
+  <a href="Shows\s5.html">
+<img class="img-responsive img-rounded" src="images/6.jpg">
+<b>13 Reasons Why</b><br>
+<p>Season 1, Episode 13</p></a>
+</div>
+
+<div class="col-sm-4 hidediv alpha-G Crime">
+<img class="img-responsive img-rounded" src="images/7.jpg">
+<b>Grey's Anatomy</b><br>
+<p>Season 14, Episode 301</p>
+</div>
+
+</div>
+
+<div class="row">       <!--*/ Third Row */-->
+
+<div class="col-sm-4 hidediv alpha-T Crime">
+<img class="img-responsive img-rounded" src="images/8.jpg">
+<b>The Blacklist</b><br>
+<p>Season 5, Episode 79</p>
+</div>
+
+<div class="col-sm-4 hidediv alpha-B Suspense">
+<img class="img-responsive img-rounded" src="images/10.jpg">
+<b>Blue Bloods</b><br>
+<p>Season 8, Episode 96
+</p>
+</div>
+
+<div class="col-sm-4 hidediv alpha-M Thriller">
+<img class="img-responsive img-rounded" src="images/12.jpg">
+<b>Marvel's Runaways</b><br>
+<p>Season 1, Episode 185</p>
+</div>
+</div>
+
+<div class="row">                 <!--*/Fourth Row */-->
+
+<div class="col-sm-4 hidediv alpha-G Mystery">
+<img class="img-responsive img-rounded" src="images/13.jpg">
+<b>Ghost Adventures</b><br>
+<p>Season 15, Episode 160</p>
+</div>
+
+<div class="col-sm-4 hidediv alpha-O Crime">
+<img class="img-responsive img-rounded" src="images/15.jpg">
+<b>Outlander</b><br>
+<p>Season 3, Episode 400</p>
+</div>
+
+<div class="col-sm-4 hidediv alpha-M Sci-Fi">
+<img class="img-responsive img-rounded" src="images/16.jpg">
+<b>Madam Secretary</b><br>
+<p>Season 4, Episode 436</p>
+</div>
+
+</div>
+<!--*/ End of Shows List */-->
+
+
+<!--*/Page Numbers */-->
+  <ul class="pagination">
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+
+<!--*/ End of Page Numbers */-->
+
+</div>
+</div>
+</div>
+</div>
+
+ <!--*/ Footer */-->
+  <footer style="background-color:orange">
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-4">
+       <h4>Copyright &copy; 2017</h4><h5>ShowTrackr</h5>
+       </div><!-- end col-sm-2 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:brown">About Us</h4>
+         <p> Collection of Best Series air on TV and Internet around the World..
+          </p>
+       </div><!-- end col-sm-4 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:green">Follow Us</h4>
+         <ul class="list-inline">
+         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+         <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+         </ul>
+       </div><!-- end col-sm-2 -->
+       <!-- end col-sm-2 -->
+     </div><!-- end row -->
+   </div><!-- end container -->
+  </footer>
+
+
+ <!-- JavaScript of Sorting-->
+ <script>
+ filterSelection("all")
+ function filterSelection(c) {
+   var x, i;
+   x = document.getElementsByClassName("hidediv");
+   if (c == "all") c = "";
+   for (i = 0; i < x.length; i++) {
+     w3RemoveClass(x[i], "show");
+     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+   }
+ }
+
+ function w3AddClass(element, name) {
+   var i, arr1, arr2;
+   arr1 = element.className.split(" ");
+   arr2 = name.split(" ");
+   for (i = 0; i < arr2.length; i++) {
+     if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+   }
+ }
+
+ function w3RemoveClass(element, name) {
+   var i, arr1, arr2;
+   arr1 = element.className.split(" ");
+   arr2 = name.split(" ");
+   for (i = 0; i < arr2.length; i++) {
+     while (arr1.indexOf(arr2[i]) > -1) {
+       arr1.splice(arr1.indexOf(arr2[i]), 1);
+     }
+   }
+   element.className = arr1.join(" ");
+ }
+
+ // Add active class to the current button (highlight it)
+ var btnContainer = document.getElementById("myBtnContainer");
+ var btns = btnContainer.getElementsByClassName("btn");
+ for (var i = 0; i < btns.length; i++) {
+   btns[i].addEventListener("click", function(){
+     var current = document.getElementsByClassName("active");
+     current[0].className = current[0].className.replace(" active", "");
+     this.className += " active";
+   });
+ }
+ </script>
+
+</body>
+</html>

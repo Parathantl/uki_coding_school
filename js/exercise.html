@@ -1,0 +1,81 @@
+<p id="squ" ></p>
+<script>
+function square(n){
+return n*n;
+}
+document.getElementById("squ").innerHTML= square(7);
+</script>
+
+
+<p id="add"></p>
+<p id="multi"></p>
+
+<script>
+function addNum(num1, num2){
+  return num1+num2;
+}
+document.getElementById("add").innerHTML= addNum(5, 8);
+</script>
+
+<script>
+function multiNum(num1, num2){
+  return num1 * num2;
+}
+document.getElementById("multi").innerHTML= multiNum(4, 7);
+</script>
+
+
+<p id="subtract"></p>
+<script>
+function subtractNum(num1, num2){
+  return num1 - num2;
+}
+document.getElementById("subtract").innerHTML= subtractNum(6, 5);
+</script>
+
+<p id="divide"></p>
+<script>
+function divideNum(num1, num2){
+  return num1/num2;
+}
+document.getElementById("divide").innerHTML= divideNum(10, 5);
+</script>
+
+
+<script>
+function alertHello(){
+  window.alert("Hello World!");
+}
+alertHello()
+</script>
+
+
+<p id="vol"></p>
+<script>
+function volume(l,w,h) {
+  return l*w*h;
+}
+document.getElementById("vol").innerHTML= volume(5,6,7);
+</script>
+
+
+<p id="name"></p>
+<script>
+var person= {firstName:"Nimal" , lastName:"Raj", age:15, city:"Kandy"};
+document.getElementById("name").innerHTML= "My name is " + person.firstName
++ " " + person.lastName +". "
++ "I'm " +person.age + " years old. "+ "I live in " +person.city +".";
+</script>
+
+
+<p id="cour"></p>
+<p id="c"></p>
+<p id="o"></p>
+<p id="u"></p>
+<script>
+var course = {courseName:"BIT", courseFee:"Rs 150 000", startDate:"12.06.2018", center:"Our Office"};
+document.getElementById("cour").innerHTML="Course Name: " + course.courseName;
+document.getElementById("c").innerHTML="Course Fee: " + course.courseFee;
+document.getElementById("o").innerHTML="Start Date: " + course.startDate;
+document.getElementById("u").innerHTML="Center: " + course.center;
+</script>

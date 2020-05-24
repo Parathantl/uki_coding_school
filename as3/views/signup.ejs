@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="icon" href="http://iconshow.me/media/images/Mixed/small-n-flat-icon/png/512/movie-alt.png">
+
+<% include ../views/script %>
+<style>
+  footer {
+     position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: black;
+     color: white;
+     text-align: center;
+  }
+  .bottomLine {
+    padding-top: 2px;
+    border-bottom: 2px solid hotpink;
+    width:40%;
+  }
+
+a:visited {
+    color: black;
+}
+
+a:visited.b {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: blue;
+}
+
+</style>
+
+
+</head>
+<body style="background-color:#c7ced8">  <!--Body color is set to Grey-->
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <div class="navbar-brand" style="background-color:Yellow"><i class="fa fa-film"></i> <span>ShowTrackr</span></div>
+    </div>
+      <ul class="nav navbar-nav">
+          <li><a href="/"><i class="fa fa-home"></i>
+    Home</a></li>
+          <li><a href="/add"><i class="fa fa-plus"></i>
+    Add</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><i class="fa fa-sign-in"></i>
+    Login</a></li>
+        <li class="active"><a href="/signup"><i class="fa fa-user-plus"></i>
+    Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+      <div id="loginbox" style="margin-top:20px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info" >
+                  <div class="panel-heading">
+                      <div class="panel-title"><center>Sign Up</center></div>
+                  </div>
+
+                  <div style="padding-top:30px" class="panel-body" >
+<!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+<form action="/signup" method="post" name="myForm">
+                        <div style="padding-bottom: 15px" class="input-group">
+                                    <span class="input-group-addon"> <i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input onmouseenter="return myFunction1()" required id="login-username" type="text" oninput="return validateForm()"  class="form-control" name="fname" value="" title="Name must contain 5 Characters" placeholder="User Name">
+                                </div>
+
+                                <div class="paraniname" style="color:black" id="demo"></div>
+
+
+                                <div style="margin-bottom: 15px" class="input-group">
+                                            <span class="input-group-addon"> <i class="fa fa-at" aria-hidden="true"></i></span>
+                                            <input onmouseenter="return myFunction()"  required id="login-username" type="text" class="form-control" name="email" value="" placeholder="Enter Your E-mail" oninput="return email_validate()">
+                                       </div>
+
+                                       <div class="paraniemail" style="color:red" id="status"></div>
+
+
+                          <div style="margin-bottom: 20px" class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                      <input onmouseenter="return myFunction2()" id="login-password" type="password" class="form-control" name="password" placeholder="Enter Your Password" oninput="return validatePassword()" required>
+                                  </div>
+
+                                  <div class="paranipass" style="color:black" id="pass"></div>
+
+
+                              <div style="margin-top:10px" class="form-group">
+                                  <div class="col-sm-12 controls">
+                                    <button id="btn-fblogin" href="#" class="btn btn-block btn-primary">Sign Up</button>
+                                  </div>
+                              </div>
+
+
+                              <div class="form-group">
+                                  <div class="col-md-12 control">
+                                      <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                          Already have an account!
+                                      <a href="/login">
+                                          Sign In Here
+                                      </a> | Visit <a href="/"><i class="fa fa-home"> Home</i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+
+
+                       </div>
+                  </div>
+       </div>
+  </div>
+<br> <br> <br>
+<br><br><br><br>
+  <footer style="background-color:lightorange">
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-4">
+       <h4>Copyright &copy; 2017</h4><h5>ShowTrackr</h5>
+       </div><!-- end col-sm-2 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:brown">About Us</h4>
+         <p> Collection of Best Series air on TV and Internet around the World..
+          </p>
+       </div><!-- end col-sm-4 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:green">Follow Us</h4>
+         <ul class="list-inline">
+         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+         <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+         </ul>
+       </div><!-- end col-sm-2 -->
+       <!-- end col-sm-2 -->
+     </div><!-- end row -->
+   </div><!-- end container -->
+  </footer>
+
+
+          <!-- Script for e-mail Validation-->
+
+
+          <script>
+
+          <!--Start Of Automatic Required -->
+
+                                                 function myFunction() {
+                                                   var empInput =  /^(?![\s\S])/;
+                                                   var a = document.forms["myForm"]["email"].value;
+                                       if (empInput.test(a) !== false){
+                                         var x = document.getElementsByClassName("paraniemail");
+                                             x[0].innerHTML ="Email required...!!";
+                                         return false;
+                                       };
+                                     }
+
+                                     function myFunction1() {
+                                       var empInput =  /^(?![\s\S])/;
+                                       var b=  document.forms["myForm"]["fname"].value;
+                                       if (empInput.test(b) !== false){
+                                         var x = document.getElementsByClassName("paraniname");
+                                             x[0].innerHTML ="Name required...!!";
+                                         return false;
+                                       };
+                                     }
+
+                                     function myFunction2() {
+                                       var empInput =  /^(?![\s\S])/;
+                                       var c = document.forms["myForm"]["password"].value
+                                       if (empInput.test(c) !== false){
+                                         var x = document.getElementsByClassName("paranipass");
+                                             x[0].innerHTML ="Password required...!!";
+                                                  return false;
+                                                };
+                                     }
+
+<!--End Of Automatic Required -->
+
+
+ <!--Form Validation -->
+          function email_validate() {
+            var Regmail =  /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+              var x = document.forms["myForm"]["email"].value;
+
+              if (Regmail.test(x) == false) {
+                  document.getElementById('status').innerHTML="Email address is not valid yet.";
+              }else {
+                document.getElementById('status').innerHTML="Thanks, you have entered a valid Email address!"
+              }
+          }
+
+
+          function validateForm() {
+            var Regname = /^([a-zA-z\s]{5,32})$/ ;
+              var x = document.forms["myForm"]["fname"].value;
+              if (Regname.test(x) == false) {
+                  document.getElementById('demo').innerHTML="Name must be 5 Characters & No Numbers";
+              }else {
+                document.getElementById('demo').innerHTML="Valid User name"
+              }
+          }
+
+          function validatePassword() {
+            var Regpass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$/;
+            var x = document.forms["myForm"]["password"].value;
+            if(Regpass.test(x) == false)
+                {
+                  document.getElementById('pass').innerHTML="Password must contain at least one capital case, one simple case, one number, one symbol and should be exactly 8 characters long.";
+              }else {
+                document.getElementById('pass').innerHTML="Valid Password"
+              }
+          }
+          </script>
+
+
+
+</body>
+</html>

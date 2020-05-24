@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add TV Show</title>
+  <link rel="icon" href="http://iconshow.me/media/images/Mixed/small-n-flat-icon/png/512/movie-alt.png">
+
+<% include ../views/script %>
+
+<style>
+
+  footer {
+     position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: black;
+     color: white;
+     text-align: center;
+  }
+  .bottomLine {
+    padding-top: 2px;
+    border-bottom: 2px solid hotpink;
+    width:40%;
+  }
+
+a:visited {
+    color: black;
+}
+
+a:visited.b {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: blue;
+}
+
+</style>
+
+</head>
+
+<body style="background-color:lightgrey">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <div class="navbar-brand" style="background-color:Yellow"><i class="fa fa-film"></i> <span>ShowTrackr</span></div>
+    </div>
+      <ul class="nav navbar-nav">
+          <li><a href="/"><i class="fa fa-home"></i>
+    Home</a></li>
+          <li class="active"><a href="/add"><i class="fa fa-plus"></i>
+    Add</a></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+<% if(user){ %>
+
+<!--Welcome...!!--><li><a href="/profile">
+<% if (user.twitter.username != null) { %>
+<%= user.twitter.username %>
+<% } else if (user.google.email != null) { %>
+<%= user.google.email %>
+<% } else if (user.facebook.name  != null)  { %>
+<%= user.facebook.name  %>
+<% } else { %>
+<%= user.local.email %>
+<% } %>
+</a>
+</li>
+
+ <li><a href="/logout"><i class="fa fa-sign-out"> Logout</a></i>
+
+
+ <% } else{ %>
+    <li><a href="/login"><i class="fa fa-sign-in"></i>
+    Login</a></li>
+        <li><a href="/signup"><i class="fa fa-user-plus"></i>
+    Sign Up</a></li>
+<% } %>
+
+      </ul>
+    </div>
+  </nav>
+
+<div class="container" style="padding-top:10px">
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">ADD TV SHOW</div>
+      <div class="panel-body">
+<form name="myForm">
+        <b> Name : </b> <br>
+        <input class="form-control" name="show" id="inputdefault" type="text" placeholder="Enter TV show name">
+</form>
+                                        <div class="pop1" style="color:red" id="pop1"></div>
+        <a style="margin-top:10px;margin-left:10px" class = "btn btn-primary btn-sm" href = "#" role = "button" onclick="return checkInp()">Add</a>
+      </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<script>
+function checkInp()
+{
+  var x=document.forms["myForm"]["show"].value;
+  if (x.match("^[a-zA-Z]"))
+  {
+    document.getElementById("pop1").innerHTML="TV Show has been Added";
+  }else{
+      document.getElementById("pop1").innerHTML="Invalid TV Show Name";
+}
+}
+</script>
+
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer style="background-color:orange">
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-4">
+       <h4>Copyright &copy; 2017</h4><h5>ShowTrackr</h5>
+       </div><!-- end col-sm-2 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:brown">About Us</h4>
+         <p> Collection of Best Series air on TV and Internet around the World..
+          </p>
+       </div><!-- end col-sm-4 -->
+
+       <div class="col-sm-4">
+         <h4 class="bottomLine" style="color:green">Follow Us</h4>
+         <ul class="list-inline">
+         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+         <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+         </ul>
+       </div><!-- end col-sm-2 -->
+       <!-- end col-sm-2 -->
+     </div><!-- end row -->
+   </div><!-- end container -->
+  </footer>
+
+
+</body>
+</body>
+</html>
